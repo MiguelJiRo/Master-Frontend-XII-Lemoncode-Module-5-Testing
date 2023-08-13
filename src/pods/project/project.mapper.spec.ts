@@ -4,7 +4,7 @@ import { createEmptyProject } from './project.vm';
 import { mockProject } from './api/project.mock-data';
 
 describe('./pods/project/mapper', () => {
-  it('project undefined', () => {
+  it('debe devolver un proyecto vacio si se usa un proyecto undefined', () => {
     // Arrange
     const project: Project = undefined;
     const emptyProject = createEmptyProject();
@@ -14,7 +14,7 @@ describe('./pods/project/mapper', () => {
     expect(result).toEqual(emptyProject);
   });
 
-  it('project null', () => {
+  it('debe devolver un proyecto vacio si se usa un proyecto null', () => {
     // Arrange
     const project: Project = null;
     const emptyProject = createEmptyProject();
@@ -25,7 +25,7 @@ describe('./pods/project/mapper', () => {
 
   });
 
-  it('real project', () => {
+  it('debe devolver un proyecto con las mismas propiedades que el proyecto usado', () => {
     // Arrange
     const mockEmployeeSummaryList: EmployeeSummary[] = [
       {
@@ -61,5 +61,11 @@ describe('./pods/project/mapper', () => {
     const result = mapProjectFromApiToVm(project);
     // Assert
     expect(result).toEqual(mockProject);
+  });
+
+  it('debe devolver un proyecto vacio usando el metodo de createEmptyProject', () => {
+    const project = createEmptyProject();
+    const modelProject = mapProjectFromApiToVm(project);
+    expect(modelProject).toEqual(createEmptyProject());
   });
 });

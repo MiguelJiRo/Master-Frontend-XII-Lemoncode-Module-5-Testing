@@ -1,0 +1,10 @@
+{
+    "terminal.integrated.autoReplies": {},
+    "terminal.integrated.automationProfile.linux": {},
+    "terminal.integrated.automationProfile.windows": {
+
+    },
+    "terminal.integrated.env.linux": {
+        "LD_PRELOAD": null,
+    },
+}
